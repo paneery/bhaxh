@@ -1,0 +1,40 @@
+// Root build.gradle file
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.7.5'
+        // Add Firebase classpath when needed
+        // classpath 'com.google.gms:google-services:4.4.0'
+    }
+}
+
+// Use the plugins DSL without version numbers (defined in settings.gradle)
+plugins {
+    id 'com.android.application' apply false
+    id 'com.android.library' apply false
+    id 'org.jetbrains.kotlin.android' apply false
+    id 'androidx.navigation.safeargs' apply false
+    // Uncomment when Firebase is implemented
+    // id 'com.google.gms.google-services' apply false
+}
+
+// Settings for all projects
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Modern clean task definition using Gradle Task API
+tasks.register('clean') {
+    doLast {
+        delete rootProject.buildDir
+    }
+}

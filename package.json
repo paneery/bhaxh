@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "newrelic": "^12.16.1"
+  }
+}
